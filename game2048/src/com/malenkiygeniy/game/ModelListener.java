@@ -1,5 +1,5 @@
 package com.malenkiygeniy.game;
 
 public interface ModelListener {
-	void updateState();
+	void updateState(State state);
 }

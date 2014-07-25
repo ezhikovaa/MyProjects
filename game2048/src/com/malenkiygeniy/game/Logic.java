@@ -9,30 +9,34 @@ public class Logic implements EventProcessor {
 
 	@Override
 	public void left() {
+		int[][] oldData=_state.matrix;
 		_state.left();
-		isGameFinished();
+		isGameFinished(oldData);
 	}
 
 	@Override
 	public void right() {
+		int[][] oldData=_state.matrix;
 		_state.right();
-		isGameFinished();
+		isGameFinished(oldData);
 	}
 
 	@Override
 	public void down() {
+		int[][] oldData=_state.matrix;
 		_state.down();
-		isGameFinished();
+		isGameFinished(oldData);
 	}
 
 	@Override
 	public void up() {
+		int[][] oldData=_state.matrix;
 		_state.up();
-		isGameFinished();
+		isGameFinished(oldData);
 	}
 
-	private void isGameFinished() {
-		if(_state.canAdd()){
+	private void isGameFinished(int[][] oldData) {
+		if(_state.canAdd(oldData)){
 			_state.add();
 		} else{
 			System.out.println("Game has finished");
